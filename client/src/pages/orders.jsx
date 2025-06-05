@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../css/orders.css";
-import { Helmet } from "react-helmet-async";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -37,9 +36,6 @@ function Orders() {
 
   return (
     <div className="orders">
-            <Helmet>
-              <title>Souled Store - Orders</title>
-            </Helmet>
       <h2 className="font-bold">Your Orders</h2>
       {orders.map((order) => (
         <div key={order._id} className="order-card">

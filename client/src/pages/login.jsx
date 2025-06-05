@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 function Login() {
   const [email, setEmail] = React.useState("");
@@ -35,9 +34,6 @@ function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-            <Helmet>
-              <title>Souled Store - Login</title>
-            </Helmet>
       <div style={{padding:"30px 20px"}} className="w-full max-w-md bg-[#1e1e1e] p-8 rounded-xl shadow-lg text-white">
         <h2 style={{marginBottom:"2vh"}} className="text-3xl font-semibold text-center mb-6">LOGIN</h2>
         <form className="flex flex-col gap-4" onSubmit={onsubmit}>

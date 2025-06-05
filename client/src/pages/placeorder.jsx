@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { shopContext } from "../context/shopContext";
 import "../css/placeorder.css";
 import "../css/cart.css";
-import { Helmet } from "react-helmet-async";
 import BillingSummary from "../components/billing";
 import { toast } from "react-toastify";
 
@@ -82,9 +81,6 @@ function Placeorder() {
 
   return (
     <div className="placeorder">
-            <Helmet>
-              <title>Souled Store - Place Order</title>
-            </Helmet>
       <form className="order-left" onSubmit={handleSubmit}>
         <h2 className="font-bold text-xl">DELIVERY ADDRESS</h2>
 

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "../css/contact.css"; // Assuming you have a CSS file for styling
-import { Helmet } from "react-helmet-async";
 
 const Section = ({ title, content, id }) => (
   <div id={id} style={{ marginTop: "5rem" }}>
@@ -27,9 +26,7 @@ function Contact() {
       style={{ marginTop: "55px", margin: "0 auto", height: "100%" }}
       className="flex flex-col items-center h-screen"
     >
-            <Helmet>
-              <title>Souled Store - Contact Us</title>
-            </Helmet>
+      
       <span
         style={{ fontSize: "12rem", marginTop: "5rem", color:" rgb(14, 13, 13)"  }}
         className="font-bold bg-gray-50 text-black w-full flex items-center justify-center"

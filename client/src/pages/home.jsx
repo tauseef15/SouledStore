@@ -6,18 +6,9 @@ import Slider from "../components/slider";
 import Offers from "../components/offers";
 import Categorized from "../components/Categorized";
 import Footer from "../components/footer";
-import { Helmet } from "react-helmet-async";
 function Home() {
   return (
     <div className="full-body">
-      <Helmet>
-        <title>Sneaker Store</title>
-        <meta
-          name="description"
-          content="Discover the latest sneaker trends, exclusive offers, and top picks of the week at Sneaker Store. Shop now for the best in footwear fashion!"
-        />
-        <link rel="canonical" href="/" />
-      </Helmet>
       <Offers />
       <Slider />
       <Categorized status="LatestCollection" title="latest collection" />

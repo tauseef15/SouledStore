@@ -5,7 +5,6 @@ import "../css/collection.css";
 import { shopContext } from "../context/shopContext";
 import ItemCard from "../components/itemCard";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { Helmet } from "react-helmet-async";
 
 function shuffleArray(array) {
   const shuffled = [...array];
@@ -35,9 +34,9 @@ const selectedCategory = category
 
   return (
     <div className="collection-page">
-            <Helmet>
-              <title>Souled Store - Collections</title>
-            </Helmet>
+      <div className="search-bar">
+        
+      </div>
       <div className="collection">
         {/* Left Sidebar */}
         <div className="collection-left">

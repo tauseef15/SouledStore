@@ -6,7 +6,6 @@ import Return from "../assets/return.png";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
 import { initAccordions } from "flowbite";
-import { Helmet } from "react-helmet-async";
 import { useEffect } from "react";
 import { useState } from "react";
 import Categorized from "../components/Categorized";
@@ -46,9 +45,6 @@ function Product() {
 
   return (
     <>
-          <Helmet>
-            <title>Souled Store - Product</title>
-          </Helmet>
       <div className="product">
         {/* Left Section - Image Grid */}
         <div className="product-left">

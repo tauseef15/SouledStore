@@ -3,7 +3,6 @@ import { shopContext } from "../context/shopContext";
 import { Link } from "react-router-dom";
 import "../css/cart.css";
 import BillingSummary from "../components/billing";
-import { Helmet } from "react-helmet-async";
 
 function Cart() {
   const { cart, updateCartItem, removeFromCart } = useContext(shopContext);
@@ -26,9 +25,6 @@ function Cart() {
 
   return (
     <div className="cart ">
-            <Helmet>
-              <title>Souled Store - Cart</title>
-            </Helmet>
       <div className="cart-left">
         <span style={{ padding: "20px" }} className="text-2xl font-bold">
           MY CART

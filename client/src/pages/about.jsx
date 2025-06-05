@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
 const Section = ({ title, content, id }) => (
@@ -40,9 +39,6 @@ function About() {
       style={{ margin: "0 auto", height: "100%" }}
       className="flex flex-col items-center h-screen"
     >
-      <Helmet>
-        <title>Souled Store - About Us</title>
-      </Helmet>
       <span
         style={{ fontSize: "12rem", marginTop: "5rem", color:" rgb(14, 13, 13)" }}
         className="font-bold bg-gray-50 w-full flex items-center justify-center"
