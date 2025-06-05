@@ -1,0 +1,99 @@
+.fandom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.marvel,
+.dc {
+  width: 48%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fandom-title {
+  margin: 1rem;
+  text-align: center;
+}
+
+.fandom-header {
+  font-size: 6.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+  padding: 1rem;
+}
+
+.logos .marvel,
+.logos .dc {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+.logos img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .marvel,
+  .dc {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .fandom {
+    gap: 1rem;
+  }
+
+  .marvel,
+  .dc {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fandom-header {
+    font-size: 4rem;
+  }
+
+  .logos img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fandom-header {
+    font-size: 2.5rem;
+  }
+
+  .item {
+    padding: 0rem;
+  }
+
+  .logos img {
+    height: 50px;
+  }
+}

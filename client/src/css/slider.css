@@ -1,0 +1,15 @@
+.swiper-pagination-bullet {
+  background-color: rgb(122, 122, 122) !important;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-pagination-bullet{
+    display: none !important;
+  }
+  
+}

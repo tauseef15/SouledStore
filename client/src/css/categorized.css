@@ -1,0 +1,108 @@
+.categorized-wrapper,.TopTen-wrapper {
+  padding: 1rem;
+}
+
+.title {
+  margin-top: 50px;
+}
+
+.categorized-title {
+  font-size: 2.25rem; /* Default size */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.categorized-subtitle {
+  font-size: 1rem;
+  color: #6b7280; /* Tailwind's gray-500 */
+  margin-bottom: 1.5rem;
+}
+
+/* Default = large screen (desktop) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .center-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .categorized-title {
+    font-size: 2rem; /* Default size */
+  }
+}
+@media (width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .center-grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+  .categorized-title {
+    margin-bottom: 0.2rem;
+    font-size: 2rem; /* Default size */
+  }
+  .categorized-subtitle {
+    font-size: 0.7rem;
+  }
+}
+/* Small screens (mobiles) */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .center-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  .categorized-title {
+    font-size: 1.5rem; /* Default size */
+    margin-bottom: 0.2rem;
+  }
+  .categorized-subtitle {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 425px) {
+  .categorized-wrapper,.TopTen-wrapper {
+    padding: 0.1rem;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;
+  }
+
+  .center-grid {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  .categorized-title {
+    font-size: 1.3rem; /* Default size */
+    margin-bottom: 0.1rem;
+  }
+  .categorized-subtitle {
+    font-size: 0.5rem;
+  }
+}
+
+.no-products-text {
+  color: #6b7280;
+  padding: 1rem;
+  grid-column: 1 / -1;
+  text-align: center;
+}
