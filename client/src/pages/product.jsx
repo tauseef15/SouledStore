@@ -4,7 +4,7 @@ import { shopContext } from "../context/shopContext";
 import Return from "../assets/return.png";
 import { IoLocationOutline } from "react-icons/io5";
 import { initAccordions } from "flowbite";
-import Categorized from "../components/Categorized";
+import Categorized from "../components/categorized";
 import Suggestions from "../components/suggetions";
 
 function Product() {
