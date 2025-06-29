@@ -4,7 +4,7 @@ import Fandom from "../components/fandom";
 import TopTen from "../components/topTen";
 import Slider from "../components/slider";
 import Offers from "../components/offers";
-import Categorized from "../components/Categorized";
+import Categorized from "../components/categorized";
 import Footer from "../components/footer";
 function Home() {
   return (

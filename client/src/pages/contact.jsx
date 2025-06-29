@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "../css/contact.css"; // Assuming you have a CSS file for styling
+import "../css/contact.css";
 
 const Section = ({ title, content, id }) => (
-  <div id={id} style={{ marginTop: "5rem" }}>
-    <h1 className="font-bold text-4xl text-center">{title}</h1>
-    <p className="text-center mt-4 leading-relaxed w-full whitespace-pre-line">
+  <div id={id} className="mt-5 md:mt-20 px-1 md:px-4 w-full text-center">
+    <h1 className="font-bold text-2xl sm:text-4xl">{title}</h1>
+    <p className="mt-2 md:mt-4 leading-relaxed text-[8px] sm:text-base whitespace-pre-line max-w-screen-xl mx-auto">
       {content}
     </p>
   </div>
@@ -22,22 +22,12 @@ function Contact() {
   }, [window.location.hash]);
 
   return (
-    <div
-      style={{ marginTop: "55px", margin: "0 auto", height: "100%" }}
-      className="flex flex-col items-center h-screen"
-    >
-      
-      <span
-        style={{ fontSize: "12rem", marginTop: "5rem", color:" rgb(14, 13, 13)"  }}
-        className="font-bold bg-gray-50 text-black w-full flex items-center justify-center"
-      >
+    <div className="flex flex-col items-center min-h-screen w-full">
+      <span className="text-2xl sm:text-4xl md:text-8xl lg:text-[12rem] font-bold text-gray-900 mt-20 text-center w-full bg-gray-50 py-2 md:py-4 lg:py-6">
         SOULED STORE
       </span>
 
-      <div
-        style={{ width: "80%" }}
-        className="flex flex-col items-center justify-center"
-      >
+      <div className="px-4 flex flex-col items-center w-full">
         <Section
           id="contact"
           title="CONTACT US"
@@ -46,23 +36,18 @@ Our dedicated customer support team is committed to providing you with timely an
 You can reach out to us anytime through multiple convenient channels — whether it’s via email, phone, live chat on our website, or through our social media pages. We understand that your time is valuable, so we make it easy for you to get the help you need, exactly when you need it.`}
         />
 
-        <div
-          className="input-wrapper flex justify-between"
-          style={{ marginTop: "3rem", width: "50%" }}
-        >
-          <input
-            type="text"
-            name="text"
-            className="input flex-grow"
-            placeholder="Enter your email"
-            style={{
-              marginLeft: "0.5rem",
-              padding: "0.5rem",
-              fontSize: "1rem",
-              outline: "none",
-            }}
-          />
-          <button className="Subscribe-btn">Send</button>
+        <div className="w-full max-w-xl mt-8 px-4 flex items-center justify-center">
+          <div className="w-full flex border border-gray-300 rounded overflow-hidden">
+            <input
+              type="text"
+              name="text"
+              className="flex-grow px-4 py-2 text-sm sm:text-base outline-none"
+              placeholder="Enter your email"
+            />
+            <button className="px-4 sm:px-6 bg-black text-white text-sm sm:text-base font-semibold">
+              Send
+            </button>
+          </div>
         </div>
 
         <Section

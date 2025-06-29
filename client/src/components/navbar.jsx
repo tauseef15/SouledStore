@@ -34,15 +34,14 @@ function Navbar() {
   };
 
   return (
-    <div
-      style={{ padding: "10px", backgroundColor: "rgb(14, 13, 13)" }}
-      className="flex items-center justify-between font-medium fixed top-0 left-0 right-0 z-50 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]"
-    >
-      <NavLink to="/" className="flex items-center gap-2">
-        <div className="text-zinc-50 text-lg">SOULED STORE</div>
+    <div className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 text-zinc-50 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-2 flex items-center justify-between font-medium">
+      {/* Logo */}
+      <NavLink to="/" className="text-lg font-semibold">
+        SOULED STORE
       </NavLink>
 
-      <ul className="hidden sm:flex gap-5 text-sm text-zinc-50">
+      {/* Center Nav Links (hide on xs) */}
+      <ul className="hidden sm:flex gap-5 text-sm">
         <li>
           <NavLink to="/" className={({ isActive }) => `${base} ${isActive ? active : ""}`}>Home</NavLink>
         </li>
@@ -57,93 +56,86 @@ function Navbar() {
         </li>
       </ul>
 
-      <div
-  style={{ marginRight: "10px", marginTop: "2px" }}
-  className="hidden sm:flex items-center gap-5 text-sm text-zinc-50 relative"
-  ref={dropdownRef}
->
-  {/* Show username */}
-  {user && (
-    <div className="text-zinc-50 mr-3 select-none">
-    <span className="font-semibold">{user.username}</span>
-    </div>
-  )}
-
-  {/* Cart Icon */}
-  {user && (
-    <div className="relative">
-      <NavLink to="/cart" className={({ isActive }) => `${base} ${isActive ? active : ""}`}>
-        <IoBag className="w-4 h-4 cursor-pointer hover:text-zinc-500 active:text-zinc-500" />
-      </NavLink>
-      {cartCount > 0 && (
-        <span className="cart-icon absolute -top-1 -right-2 bg-red-600 text-white text-[10px] px-[6px] py-[1px] rounded-full font-semibold">
-          {cartCount}
-        </span>
-      )}
-    </div>
-  )}
-
-  {/* Profile Icon and Dropdown */}
-  <img
-    src={ProfileIcon}
-    alt="Profile"
-    className="w-4 h-4 rounded-full cursor-pointer hover:opacity-75 active:opacity-60"
-    onClick={() => setDropdownOpen(!dropdownOpen)}
-  />
-
-  {dropdownOpen && (
-    <div className="absolute top-10 right-0 bg-white shadow-md text-black w-28 z-50">
-      <ul className="flex flex-col text-sm">
-        {user ? (
-          <>
-            <li>
-              <NavLink
-                to="/orders"
-                style={{ padding: "5px 8px" }}
-                className="block hover:bg-zinc-100"
-                onClick={() => setDropdownOpen(false)}
-              >
-                Orders
-              </NavLink>
-            </li>
-            <li>
-              <span
-                style={{ padding: "5px 8px", cursor: "pointer" }}
-                className="block hover:bg-zinc-100"
-                onClick={handleLogout}
-              >
-                Log Out
-              </span>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <NavLink
-                to="/login"
-                style={{ padding: "5px 8px" }}
-                className="block hover:bg-zinc-100"
-                onClick={() => setDropdownOpen(false)}
-              >
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/signup"
-                style={{ padding: "5px 8px" }}
-                className="block hover:bg-zinc-100"
-                onClick={() => setDropdownOpen(false)}
-              >
-                Signup
-              </NavLink>
-            </li>
-          </>
+      {/* Right: Profile + Cart */}
+      <div className="flex items-center gap-5 text-sm relative" ref={dropdownRef}>
+        {/* Username */}
+        {user && (
+          <span className="hidden sm:block font-semibold select-none">
+            {user.username}
+          </span>
         )}
-      </ul>
-    </div>
-  )}
-</div>
+
+        {/* Cart Icon */}
+        {user && (
+          <div className="relative">
+            <NavLink to="/cart" className={({ isActive }) => `${base} ${isActive ? active : ""}`}>
+              <IoBag className="w-5 h-5" />
+            </NavLink>
+            {cartCount > 0 && (
+              <span className="absolute -top-1.5 -right-2 bg-red-600 text-white text-[10px] px-[6px] py-[1px] rounded-full font-semibold">
+                {cartCount}
+              </span>
+            )}
+          </div>
+        )}
+
+        {/* Profile Dropdown */}
+        <img
+          src={ProfileIcon}
+          alt="Profile"
+          className="w-5 h-5 rounded-full cursor-pointer hover:opacity-75 active:opacity-60"
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+        />
+
+        {dropdownOpen && (
+          <div className="absolute top-10 right-0 bg-white shadow-md text-black w-28 rounded-md overflow-hidden z-50">
+            <ul className="flex flex-col text-sm">
+              {user ? (
+                <>
+                  <li>
+                    <NavLink
+                      to="/orders"
+                      className="block px-3 py-2 hover:bg-zinc-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Orders
+                    </NavLink>
+                  </li>
+                  <li>
+                    <span
+                      onClick={handleLogout}
+                      className="block px-3 py-2 hover:bg-zinc-100 cursor-pointer"
+                    >
+                      Log Out
+                    </span>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink
+                      to="/login"
+                      className="block px-3 py-2 hover:bg-zinc-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Login
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/signup"
+                      className="block px-3 py-2 hover:bg-zinc-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Signup
+                    </NavLink>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
