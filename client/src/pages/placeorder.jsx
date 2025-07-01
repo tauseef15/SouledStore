@@ -77,7 +77,7 @@ function Placeorder() {
   }
 
   return (
-    <div className="h-screen w-[90%] max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 pt-10">
+    <div className="h-full w-[90%] max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 pt-10">
       <form
         onSubmit={handleSubmit}
         className="w-full lg:w-2/3 p-2 md:p-6 rounded-md shadow-sm"
