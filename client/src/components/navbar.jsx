@@ -38,8 +38,8 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 text-zinc-50 px-[1vw] py-3 flex items-center justify-between font-medium">
-      {/* Logo */}
+    <div className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 text-zinc-50 px-[1vw] py-2 sm:py-3 flex items-center justify-between font-medium">
+      {/* Logo */} 
       <NavLink to="/" className="text-lg md:text-sm font-semibold">
         SOULED STORE
       </NavLink>
