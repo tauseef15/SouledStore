@@ -33,7 +33,7 @@ function ItemCard({ product }) {
 
           {/* Product name for small/medium screens (below image) */}
           <div className="block lg:hidden px-2 w-full">
-            <span className="font-semibold text-[10px] sm:text-lg uppercase tracking-wide truncate block whitespace-nowrap overflow-hidden">
+            <span className="font-bold text-[10px] sm:text-lg uppercase tracking-wide truncate block whitespace-nowrap overflow-hidden">
               {product.name}
             </span>
           </div>

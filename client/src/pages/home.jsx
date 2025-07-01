@@ -10,13 +10,11 @@ function Home() {
     <div className="full-body">
       <Offers />
       <Slider />
-      <div className="p-1">
         <Categorized status="LatestCollection" title="latest collection" />
         <TopTen status="Top10" title="top 10 picks of the week" />
         <Categorized status="StylesInSpotLight" title="styles in spotlight" />
         <Fandom />
         <Categorized status="Sneakers" title="sneaker's den" />
-      </div>
     </div>
   );
 }
