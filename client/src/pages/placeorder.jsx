@@ -39,7 +39,7 @@ function Placeorder() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:3000/api/orders/place-order", {
+      const res = await fetch("https://souled-store.onrender.com/api/orders/place-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

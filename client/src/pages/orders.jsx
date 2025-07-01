@@ -7,7 +7,7 @@ function Orders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/orders/my-orders", {
+        const res = await fetch("https://souled-store.onrender.com/api/orders/my-orders", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

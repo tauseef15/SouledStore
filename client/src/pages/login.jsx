@@ -9,7 +9,7 @@ function Login() {
   const onsubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/users/login", {
+      const res = await fetch("https://souled-store.onrender.com/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
