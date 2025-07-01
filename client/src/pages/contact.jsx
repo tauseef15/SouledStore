@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../css/contact.css";
 
 const Section = ({ title, content, id }) => (
   <div id={id} className="mt-5 md:mt-20 px-1 md:px-4 w-full text-center">

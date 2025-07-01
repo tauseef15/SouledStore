@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/cart.css";
 
 function BillingSummary({ total, discount, finalAmount, button }) {
   const navigate = useNavigate();
@@ -10,38 +9,41 @@ function BillingSummary({ total, discount, finalAmount, button }) {
   };
 
   return (
-    <div className="cart-right">
-      <div className="price-summary-box">
-        <p className="price-summary-title">Billing Details</p>
+    <div className="w-[90%] sm:w-full mx-auto bg-gray-100/20 rounded-2xl mt-10 p-6  shadow-md">
+      <div className="mx-auto">
+        <p className="text-lg font-semibold mb-6">Billing Details</p>
 
-        <div className="price-summary-row">
-          <span>Sub Total:</span> 
+        <div className="flex justify-between text-sm mb-2">
+          <span>Sub Total:</span>
           <span>₹{total}</span>
         </div>
 
-        <div className="price-summary-row discount">
+        <div className="flex justify-between text-sm mb-2 text-green-600">
           <span>Bag Discount:</span>
           <span>-₹{discount}</span>
         </div>
 
-        <div className="price-summary-row delivery">
+        <div className="flex justify-between text-sm mb-4 text-green-600">
           <span>Delivery Fee:</span>
           <span>Free</span>
         </div>
 
-        <hr style={{ margin: "16px 0" }} />
+        <hr className="my-4" />
 
-        <div className="final-amount">
+        <div className="flex justify-between text-base font-semibold mb-3">
           <span>Final Amount:</span>
           <span>₹{finalAmount}</span>
         </div>
 
-        <div className="free-delivery-msg">
+        <div className="bg-green-100 text-green-700 text-sm font-medium py-2 px-3 text-center rounded-md mb-4">
           Yay! You get <strong>FREE delivery</strong> on this order
         </div>
 
         {button && (
-          <button className="proceed-button" onClick={handleProceed}>
+          <button
+            onClick={handleProceed}
+            className="w-full bg-white text-black font-bold py-3 rounded-md hover:bg-gray-100 transition"
+          >
             {button}
           </button>
         )}

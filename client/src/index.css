@@ -8,8 +8,8 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: rgb(14, 13, 13);
-  /* background-color: #101218; */  
+  background-color: #0e0d0d;
+  /* background-color: #101218; */
   color: white;
 }
 html {
@@ -41,11 +41,28 @@ html {
   border-radius: 10px;
 } */
 
-.cart-icon{
+.cart-icon {
   padding: 1px 6px;
 }
-@media screen and (max-width: 768px) {
-  .full-body {
-    margin: 0px 5px !important;
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-left 20s linear infinite;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

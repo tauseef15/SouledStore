@@ -22,10 +22,9 @@ function Login() {
         throw new Error(data.message || "Login failed");
       }
 
-      // Store token & user info
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/"); // Or redirect to home/cart etc.
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error.message);
       alert(error.message);
@@ -33,36 +32,35 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div style={{padding:"30px 20px"}} className="w-full max-w-md bg-[#1e1e1e] p-8 rounded-xl shadow-lg text-white">
-        <h2 style={{marginBottom:"2vh"}} className="text-3xl font-semibold text-center mb-6">LOGIN</h2>
+    <div className="min-h-screen flex items-center justify-center bg-black px-4">
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg bg-[#1e1e1e] rounded-xl shadow-lg p-6 sm:p-8 text-white">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6">LOGIN</h2>
+
         <form className="flex flex-col gap-4" onSubmit={onsubmit}>
           <input
             type="email"
-            style={{padding:"1vh"}}
             placeholder="Email"
-            className="bg-[#2f2f2f] text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
+            className="p-3 sm:p-3.5 bg-[#2f2f2f] text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            style={{padding:"1vh"}}
             placeholder="Password"
-            className="bg-[#2f2f2f] text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
+            className="p-3 sm:p-3.5 bg-[#2f2f2f] text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            style={{padding:"1vh"}}
             type="submit"
-            className="bg-gray-100 hover:bg-gray-300 text-black font-bold py-2 rounded-lg"
+            className="p-3 bg-gray-100 hover:bg-gray-300 text-black font-bold rounded-md transition"
           >
             Sign In
           </button>
         </form>
-        <p style={{padding:"1vh", paddingBottom:"0vh"}} className="text-center text-gray-400 mt-3">
+
+        <p className="text-center text-gray-400 mt-4 text-sm sm:text-base">
           Don't have an account?{" "}
           <a href="/signup" className="text-blue-400 hover:underline">
-            Login
+            Sign Up
           </a>
         </p>
       </div>

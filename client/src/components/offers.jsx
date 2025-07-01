@@ -1,23 +1,14 @@
 import React from "react";
-import "../css/offers.css";
 
 function Offers() {
   return (
-    <div className="marquee-container">
+    <div className="w-full bg-white py-1 md:py-2 mt-[40px] marquee-container">
       <div className="marquee-track">
-        <span className="marquee-text">
-          BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2
-          SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND
-          GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY
-          SNEAKER &#x2022;
+        <span className="font-bold text-black text-sm md:text-lg mx-5">
+          BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022;
         </span>
-      </div>
-      <div className="marquee-track">
-        <span style={{marginLeft:"5px"}} className="marquee-text">
-           BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY
-          ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2
-          SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2
-          SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022;
+        <span className="font-bold text-black text-sm md:text-lg mx-5">
+          BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022; BUY ANY 2 SNEAKERS AND GET 50% ON ANY SNEAKER &#x2022;
         </span>
       </div>
     </div>

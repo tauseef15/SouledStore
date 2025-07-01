@@ -42,8 +42,8 @@ function Collection() {
                 key={cat}
                 className={`p-2 shrink-0 rounded-md cursor-pointer text-[10px] md:text-sm whitespace-nowrap transition-colors ${
                   selectedCategory === cat
-                    ? "bg-black text-white"
-                    : "hover:bg-gray-100"
+                    ? "bg-white text-black"
+                    : "hover:bg-gray-900"
                 }`}
                 onClick={() => navigate(`/collection/${cat.toLowerCase()}`)}
               >

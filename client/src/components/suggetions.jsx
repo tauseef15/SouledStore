@@ -14,7 +14,7 @@ function shuffleArray(array) {
   }
   return shuffled;
 }
-
+ 
 function Suggestions({ title, status, category, excludeId }) {
   const { Products } = useContext(shopContext);
 

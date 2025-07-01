@@ -6,36 +6,56 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Marvel from "../assets/slider-images/marvel.png";
 import DC from "../assets/slider-images/dc.png";
-import "../css/slider.css"; // Custom styles for white dots
 
 function Banner() {
   return (
-    <div style={{marginTop:"60px"}} className="flex justify-center items-center w-full">
+    <div className="w-full mt-[60px] px-2 sm:px-4 md:px-8">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={50}
+        spaceBetween={20}
         slidesPerView={1}
-        pagination={{ clickable: true }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        style={{ width: "100%", height: "100%" }}
+        pagination={{
+          clickable: true,
+          renderBullet: (index, className) =>
+            `<span class="${className} inline-block w-2 h-2 sm:w-3 sm:h-3 mx-1 rounded-full bg-gray-500 opacity-100 transition-all duration-300"></span>`,
+        }}
+        className="w-full h-full"
       >
         <SwiperSlide>
-          <div className="flex justify-center items-center">
-            <img className="cursor-pointer" src={Marvel} alt="Marvel" />
+          <div className="flex justify-center items-center w-full h-auto">
+            <img
+              src={Marvel}
+              alt="Marvel"
+              className="w-full max-h-[400px] object-contain sm:rounded-lg cursor-pointer"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex justify-center items-center">
-            <img className="cursor-pointer" src={DC} alt="DC" />
+          <div className="flex justify-center items-center w-full h-auto">
+            <img
+              src={DC}
+              alt="DC"
+              className="w-full max-h-[400px] object-contain sm:rounded-lg cursor-pointer"
+            />
           </div>
         </SwiperSlide>
-        {/* Add more slides as needed */}
       </Swiper>
+
+      {/* Custom Tailwind override for active bullet */}
+      <style>{`
+        .swiper-pagination-bullet-active {
+          background-color: white !important;
+        }
+        @media (max-width: 768px) {
+          .swiper-pagination {
+            display: none !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

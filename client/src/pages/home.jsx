@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "../components/hero";
 import Fandom from "../components/fandom";
 import TopTen from "../components/topTen";
 import Slider from "../components/slider";

@@ -6,7 +6,7 @@ function ItemCard({ product }) {
     <div>
       <Link
         to={`/product/${product.id}`}
-        className="flex flex-row lg:flex-row items-center m-0 rounded-md transition-transform duration-300 hover:-translate-y-1 no-underline"
+        className="flex flex-row lg:flex-row items-center m-1 rounded-md transition-transform duration-300 hover:-translate-y-1 no-underline"
       >
         {/* Vertical name (only on lg and up) */}
         <div className="shrink-0 mr-4 text-center hidden lg:block">
