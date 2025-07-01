@@ -24,7 +24,7 @@ function ItemCard({ product }) {
         </div>
 
         {/* Image and details */}
-        <div className="flex flex-col items-start justify-center gap-2 w-full">
+        <div className="flex flex-col items-start justify-center gap-1 md:gap-2 w-full">
           <img
             src={product.image}
             alt={product.name}
@@ -33,7 +33,7 @@ function ItemCard({ product }) {
 
           {/* Product name for small/medium screens (below image) */}
           <div className="block lg:hidden px-2 w-full">
-            <span className="font-semibold text-[8px] sm:text-lg uppercase tracking-wide truncate block whitespace-nowrap overflow-hidden">
+            <span className="font-semibold text-[10px] sm:text-lg uppercase tracking-wide truncate block whitespace-nowrap overflow-hidden">
               {product.name}
             </span>
           </div>

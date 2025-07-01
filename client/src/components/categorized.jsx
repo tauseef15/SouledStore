@@ -39,7 +39,7 @@ function Categorized({ status, title }) {
             shuffledProducts.length < 4
               ? "justify-center"
               : ""
-          } gap-[0.1rem] sm:gap-[1rem] md:gap-[0.5rem] lg:gap-[1.5rem] 
+          } gap-[0.5rem] sm:gap-[1rem] md:gap-[0.5rem] lg:gap-[1.5rem] 
           grid-cols-2 
           md:grid-cols-2 
           lg:grid-cols-4 
