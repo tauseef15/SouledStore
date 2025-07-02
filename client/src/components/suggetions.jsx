@@ -1,9 +1,6 @@
-// components/Categorized.jsx
-
 import React, { useContext } from "react";
 import { shopContext } from "../context/shopContext";
 import ItemCard from "./itemCard";
-import "../css/categorized.css"; // External CSS
 
 // Shuffle function
 function shuffleArray(array) {
@@ -14,62 +11,45 @@ function shuffleArray(array) {
   }
   return shuffled;
 }
- 
+
 function Suggestions({ title, status, category, excludeId }) {
   const { Products } = useContext(shopContext);
 
-  // Flexible filtering
   let filteredProducts = Products;
 
   if (status) {
-    filteredProducts = filteredProducts.filter(
-      (product) => product.status === status
-    );
+    filteredProducts = filteredProducts.filter((product) => product.status === status);
   }
 
   if (category) {
-    filteredProducts = filteredProducts.filter(
-      (product) => product.category === category
-    );
+    filteredProducts = filteredProducts.filter((product) => product.category === category);
   }
 
-  // Exclude current product if needed
   if (excludeId) {
-    filteredProducts = filteredProducts.filter(
-      (product) => product.id !== excludeId
-    );
+    filteredProducts = filteredProducts.filter((product) => product.id !== excludeId);
   }
 
-  const shuffledProducts = shuffleArray(filteredProducts).slice(0, 4);
+  const shuffledProducts = shuffleArray(filteredProducts).slice(0, 8);
 
   return (
-    <div className="categorized-wrapper">
-      <div className="title">
-        {title && (
-          <div>
-            <div className="flex items-center">
-              <h1 className="categorized-title">{title}</h1>
-            </div>
-            <p className="categorized-subtitle">Explore our {title} products</p>
-          </div>
-        )}
-
-        <div
-          className={`product-grid ${
-            shuffledProducts.length < 4 ? "center-grid" : ""
-          }`}
-        >
-          {shuffledProducts.length > 0 ? (
-            shuffledProducts.map((product) => (
-              <ItemCard key={product.id} product={product} />
-            ))
-          ) : (
-            <p className="no-products-text">
-              No matching products found.
-            </p>
-          )}
+    <div className="w-full px-4 py-10 sm:px-6 md:px-10 lg:px-20">
+      {title && (
+        <div className="mb-6">
+          <h1 className="text-xl sm:text-2xl font-bold">{title}</h1>
         </div>
-      </div>
+      )}
+
+      {shuffledProducts.length > 0 ? (
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {shuffledProducts.map((product) => (
+            <div key={product.id} className="w-full">
+              <ItemCard product={product} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-gray-400 text-sm mt-4">No suggestions found.</p>
+      )}
     </div>
   );
 }
