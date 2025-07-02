@@ -39,12 +39,12 @@ function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 text-zinc-50 px-[1vw] py-2 sm:py-3 flex items-center justify-between font-medium">
-      {/* Logo */} 
+      {/* Logo */}
       <NavLink to="/" className="text-lg md:text-sm font-semibold">
         SOULED STORE
       </NavLink>
 
-      {/* Center Nav Links (hide on xs) */}
+      {/* Center Nav Links */}
       <ul className="hidden sm:flex gap-5 text-sm">
         <li>
           <NavLink
@@ -81,21 +81,22 @@ function Navbar() {
       </ul>
 
       {/* Right Side */}
-      <div
-        className="hidden sm:flex items-center gap-5 relative"
-        ref={dropdownRef}
-      >
+      <div className="flex items-center gap-4 sm:gap-5 relative" ref={dropdownRef}>
+        {/* Username */}
         {user && (
-          <span className="font-semibold select-none text-[12px] sm:text-sm">{user.username}</span>
+          <span className="hidden sm:block text-xs sm:text-sm font-semibold select-none">
+            {user.username}
+          </span>
         )}
 
+        {/* Cart Icon */}
         {user && (
           <div className="relative">
             <NavLink
               to="/cart"
               className={({ isActive }) => `${base} ${isActive ? active : ""}`}
             >
-              <IoBag className="w-3 h-3 md:w-4 md:h-4" />
+              <IoBag className="w-4 h-4 sm:w-5 sm:h-5" />
             </NavLink>
             {cartCount > 0 && (
               <span className="absolute -top-1.5 -right-2 bg-red-600 text-white text-[10px] px-[6px] py-[1px] rounded-full font-semibold">
@@ -105,13 +106,15 @@ function Navbar() {
           </div>
         )}
 
+        {/* Profile Icon Dropdown (only sm+) */}
         <img
           src={ProfileIcon}
           alt="Profile"
-          className="w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer hover:opacity-75 active:opacity-60"
+          className="hidden sm:block w-4 h-4 rounded-full cursor-pointer hover:opacity-75 active:opacity-60"
           onClick={() => setDropdownOpen(!dropdownOpen)}
         />
 
+        {/* Dropdown Menu */}
         {dropdownOpen && (
           <div className="absolute top-10 right-0 bg-white shadow-md text-black w-28 rounded-md overflow-hidden z-50">
             <ul className="flex flex-col text-sm">
@@ -160,23 +163,23 @@ function Navbar() {
             </ul>
           </div>
         )}
+
+        {/* Mobile Menu Icon */}
+        <div className="sm:hidden text-xl">
+          <IoMenu
+            onClick={() => setMobileMenuOpen(true)}
+            className="cursor-pointer"
+          />
+        </div>
       </div>
 
-      {/* Mobile Menu Icon */}
-      <div className="sm:hidden text-xl">
-        <IoMenu
-          onClick={() => setMobileMenuOpen(true)}
-          className="cursor-pointer"
-        />
-      </div>
-
-      {/* Mobile Full Screen Menu */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
           ref={mobileMenuRef}
           className="fixed inset-0 bg-zinc-900 text-white z-50 flex flex-col px-8 py-6"
         >
-          {/* Close Button */}
+          {/* Close */}
           <div className="self-end text-2xl mb-6">
             <IoClose
               onClick={() => setMobileMenuOpen(false)}
@@ -184,7 +187,7 @@ function Navbar() {
             />
           </div>
 
-          {/* Navigation Links */}
+          {/* Navigation */}
           <div className="flex flex-col gap-5 text-lg">
             <NavLink
               to="/"
@@ -216,10 +219,10 @@ function Navbar() {
             </NavLink>
           </div>
 
-          {/* Separator */}
+          {/* Divider */}
           <hr className="my-6 border-zinc-700" />
 
-          {/* Auth & Cart Links */}
+          {/* Auth & Cart */}
           <div className="flex flex-col gap-5 text-lg">
             {user ? (
               <>
